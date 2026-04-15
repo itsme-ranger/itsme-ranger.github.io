@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerry Akbar — Portfolio</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #0d0d0d;
+      --surface: #161616;
+      --border: #2a2a2a;
+      --text-primary: #f0f0f0;
+      --text-secondary: #888;
+      --accent: #c8ff00;
+      --accent-dim: rgba(200, 255, 0, 0.08);
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Subtle grid background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Radial glow */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(200, 255, 0, 0.04) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 56px 64px;
+      max-width: 560px;
+      width: calc(100% - 40px);
+      text-align: center;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6);
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--accent-dim);
+      border: 1px solid rgba(200, 255, 0, 0.25);
+      color: var(--accent);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 99px;
+      margin-bottom: 32px;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.7;
+      max-width: 380px;
+      margin: 0 auto 40px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0 0 36px;
+    }
+
+    .cta-label {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .cta-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: #0d0d0d;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 12px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      box-shadow: 0 4px 20px rgba(200, 255, 0, 0.2);
+    }
+
+    .cta-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(200, 255, 0, 0.35);
+      background: #d6ff1a;
+    }
+
+    .cta-link svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 0.78rem;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="badge">Coming Soon</div>
+
+    <h1>New portfolio<br />is in the <span>works.</span></h1>
+
+    <p class="subtitle">
+      I'm rebuilding my portfolio from scratch. Until it's ready,
+      you can find my work and experience at my current site.
+    </p>
+
+    <hr class="divider" />
+
+    <p class="cta-label">Visit my portfolio</p>
+
+    <a class="cta-link" href="https://gerryakbar.wixsite.com/portfolio" target="_blank" rel="noopener noreferrer">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+      </svg>
+      gerryakbar.wixsite.com/portfolio
+    </a>
+
+    <p class="footer">Gerry Akbar &mdash; 2026</p>
+  </div>
+</body>
+</html>
